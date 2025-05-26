@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.12.3 on win32)" generated="20250525 21:02:25.970" rpa="false" schemaversion="3">
+<suite id="s1" name="FretoLogin" source="c:\Users\HP\Downloads\robot_framework_pipeline_example\tests\web\FretoLogin.robot">
+<test id="s1-t1" name="Acesso página VeryCode com sucesso" line="9">
+<kw name="Iniciar sessão web" library="HOOKS" type="SETUP">
+<arg>chrome</arg>
+<arg>${OPTIONS}</arg>
+<arg>veryCode</arg>
+<kw name="Selecionar URL por ambiente" library="HOOKS">
+<arg>${AMBIENTE}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${BASE_URL}</var>
+<arg>${BASE_URL_UMC}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250525 21:02:27.256" level="INFO">${BASE_URL} = https://umc.stage.platosedu.io/v2/erp/pt</msg>
+<status status="PASS" starttime="20250525 21:02:27.255" endtime="20250525 21:02:27.266"/>
+</kw>
+<if>
+<branch type="IF" condition="'${AMBIENTE}' == 'umc'">
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>${BASE_URL_UMC}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" starttime="20250525 21:02:27.269" endtime="20250525 21:02:27.270"/>
+</kw>
+<status status="NOT RUN" starttime="20250525 21:02:27.267" endtime="20250525 21:02:27.271"/>
+</branch>
+<branch type="ELSE IF" condition="'${AMBIENTE}' == 'upf'">
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>${BASE_URL_UPF}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" starttime="20250525 21:02:27.272" endtime="20250525 21:02:27.273"/>
+</kw>
+<status status="NOT RUN" starttime="20250525 21:02:27.271" endtime="20250525 21:02:27.274"/>
+</branch>
+<branch type="ELSE IF" condition="'${AMBIENTE}' == 'utp'">
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>${BASE_URL_UTP}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" starttime="20250525 21:02:27.276" endtime="20250525 21:02:27.277"/>
+</kw>
+<status status="NOT RUN" starttime="20250525 21:02:27.274" endtime="20250525 21:02:27.277"/>
+</branch>
+<branch type="ELSE IF" condition="'${AMBIENTE}' == 'haoc'">
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>${BASE_URL_HAOC}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" starttime="20250525 21:02:27.279" endtime="20250525 21:02:27.279"/>
+</kw>
+<status status="NOT RUN" starttime="20250525 21:02:27.278" endtime="20250525 21:02:27.280"/>
+</branch>
+<branch type="ELSE IF" condition="'${AMBIENTE}' == 'infoprod'">
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>${BASE_URL_INFOPROD}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" starttime="20250525 21:02:27.280" endtime="20250525 21:02:27.282"/>
+</kw>
+<status status="NOT RUN" starttime="20250525 21:02:27.280" endtime="20250525 21:02:27.283"/>
+</branch>
+<branch type="ELSE IF" condition="'${AMBIENTE}' == 'kroton'">
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>${BASE_URL_KROTON}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" starttime="20250525 21:02:27.285" endtime="20250525 21:02:27.286"/>
+</kw>
+<status status="NOT RUN" starttime="20250525 21:02:27.283" endtime="20250525 21:02:27.286"/>
+</branch>
+<branch type="ELSE IF" condition="'${AMBIENTE}' == 'mackenzie'">
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>${BASE_URL_MACKENZIE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" starttime="20250525 21:02:27.288" endtime="20250525 21:02:27.289"/>
+</kw>
+<status status="NOT RUN" starttime="20250525 21:02:27.287" endtime="20250525 21:02:27.290"/>
+</branch>
+<branch type="ELSE IF" condition="'${AMBIENTE}' == 'stricto'">
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>${BASE_URL_STRICTO}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" starttime="20250525 21:02:27.292" endtime="20250525 21:02:27.293"/>
+</kw>
+<status status="NOT RUN" starttime="20250525 21:02:27.291" endtime="20250525 21:02:27.293"/>
+</branch>
+<branch type="ELSE IF" condition="'${AMBIENTE}' == 'gestor'">
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>${GESTO_URL}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" starttime="20250525 21:02:27.295" endtime="20250525 21:02:27.295"/>
+</kw>
+<status status="NOT RUN" starttime="20250525 21:02:27.294" endtime="20250525 21:02:27.296"/>
+</branch>
+<branch type="ELSE IF" condition="'${AMBIENTE}' == 'freto'">
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>${URLfreto}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" starttime="20250525 21:02:27.297" endtime="20250525 21:02:27.298"/>
+</kw>
+<status status="NOT RUN" starttime="20250525 21:02:27.296" endtime="20250525 21:02:27.298"/>
+</branch>
+<branch type="ELSE IF" condition="'${AMBIENTE}' == 'veryCode'">
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${BASE_URL}</arg>
+<arg>${UrlVeryCode}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20250525 21:02:27.303" level="INFO">${BASE_URL} = https://vericode.com.br/pt</msg>
+<status status="PASS" starttime="20250525 21:02:27.301" endtime="20250525 21:02:27.304"/>
+</kw>
+<status status="PASS" starttime="20250525 21:02:27.300" endtime="20250525 21:02:27.306"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<arg>Ambiente ${AMBIENTE} não encontrado.</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20250525 21:02:27.307" endtime="20250525 21:02:27.308"/>
+</kw>
+<status status="NOT RUN" starttime="20250525 21:02:27.306" endtime="20250525 21:02:27.308"/>
+</branch>
+<status status="PASS" starttime="20250525 21:02:27.267" endtime="20250525 21:02:27.309"/>
+</if>
+<status status="PASS" starttime="20250525 21:02:27.254" endtime="20250525 21:02:27.309"/>
+</kw>
+<kw name="Get Driver Path With Browser" library="WebDriver">
+<var>${DRIVER_PATH}</var>
+<arg>${BROWSER}</arg>
+<msg timestamp="20250525 21:02:27.508" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20250525 21:02:29.520" level="INFO">Get LATEST chromedriver version for google-chrome</msg>
+<msg timestamp="20250525 21:02:29.624" level="INFO">Get LATEST chromedriver version for google-chrome</msg>
+<msg timestamp="20250525 21:02:29.740" level="INFO">Driver [C:\Users\HP\.wdm\drivers\chromedriver\win64\136.0.7103.113\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver] found in cache</msg>
+<msg timestamp="20250525 21:02:29.743" level="INFO">Driver path for chrome: C:\Users\HP\.wdm\drivers\chromedriver\win64\136.0.7103.113\chromedriver-win32\chromedriver.exe</msg>
+<msg timestamp="20250525 21:02:29.744" level="INFO">${DRIVER_PATH} = C:\Users\HP\.wdm\drivers\chromedriver\win64\136.0.7103.113\chromedriver-win32\chromedriver.exe</msg>
+<status status="PASS" starttime="20250525 21:02:27.310" endtime="20250525 21:02:29.745"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<arg>executable_path=${DRIVER_PATH}</arg>
+<arg>options=${OPTIONS}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250525 21:02:29.753" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20250525 21:02:29.746" endtime="20250525 21:02:31.458"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${OPTIONS}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250525 21:02:31.459" level="INFO">add_argument("--ignore-local-proxy-environment-variables")</msg>
+<status status="PASS" starttime="20250525 21:02:31.458" endtime="20250525 21:02:31.460"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250525 21:02:31.461" endtime="20250525 21:02:31.514"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20250525 21:02:31.518" level="INFO">Opening url 'https://vericode.com.br/pt'</msg>
+<status status="PASS" starttime="20250525 21:02:31.516" endtime="20250525 21:02:33.450"/>
+</kw>
+<status status="PASS" starttime="20250525 21:02:27.252" endtime="20250525 21:02:33.451"/>
+</kw>
+<kw name="Given estou na página e insiro" library="LoginPageFretoSteps">
+<kw name="Inserir usuário Válido" library="LoginPageFreto">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BTN_EXPLORE_SOL}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250525 21:02:33.462" endtime="20250525 21:02:33.818"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_EXPLORE_SOL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250525 21:02:33.820" level="INFO">Clicking element 'xpath=//*[@class="button button--primary"]'.</msg>
+<status status="PASS" starttime="20250525 21:02:33.819" endtime="20250525 21:02:34.154"/>
+</kw>
+<status status="PASS" starttime="20250525 21:02:33.457" endtime="20250525 21:02:34.154"/>
+</kw>
+<status status="PASS" starttime="20250525 21:02:33.454" endtime="20250525 21:02:34.155"/>
+</kw>
+<kw name="Then valido se a criação do VeryCode foi realizada com sucesso" library="LoginPageFretoSteps">
+<kw name="Verificar Login Bem Sucedido" library="LoginPageFreto">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20250525 21:02:34.969" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20250525 21:02:34.162" endtime="20250525 21:02:34.969"/>
+</kw>
+<status status="PASS" starttime="20250525 21:02:34.158" endtime="20250525 21:02:34.970"/>
+</kw>
+<status status="PASS" starttime="20250525 21:02:34.156" endtime="20250525 21:02:34.970"/>
+</kw>
+<kw name="Finalizar sessão web" library="HOOKS" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250525 21:02:34.973" endtime="20250525 21:02:41.503"/>
+</kw>
+<status status="PASS" starttime="20250525 21:02:34.971" endtime="20250525 21:02:41.505"/>
+</kw>
+<status status="PASS" starttime="20250525 21:02:27.251" endtime="20250525 21:02:41.507"/>
+</test>
+<status status="PASS" starttime="20250525 21:02:25.982" endtime="20250525 21:02:41.512"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="FretoLogin">FretoLogin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

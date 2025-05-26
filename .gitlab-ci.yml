@@ -1,0 +1,12 @@
+
+robot-tests:
+  image: python:3.11
+  before_script:
+    - pip install -r requirements.txt
+  script:
+    - mkdir -p results
+    - robot -d results tests/
+  artifacts:
+    paths:
+      - results/
+    when: always

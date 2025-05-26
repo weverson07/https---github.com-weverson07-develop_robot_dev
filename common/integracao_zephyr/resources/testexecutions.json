@@ -1,0 +1,13 @@
+{
+  "projectKey": "OPCH",
+  "testCaseKey": "OPCH-T6",
+  "testCycleKey": "OPCH-R28",
+  "statusName": "Fail",
+  "testScriptResults": [
+    {
+      "statusName": "Fail",
+      "actualResult": ""
+    }
+  ],
+  "comment": ""
+}
