@@ -1,4 +1,3 @@
-
 name: Run Robot Framework Tests
 
 on: [push, pull_request]
@@ -8,22 +7,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
 
-      - name: Install Dependencies
+      - name: Install System Dependencies (Chrome + WebDriver)
+        run: |
+          sudo apt update
+          sudo apt install -y wget unzip curl xvfb libxi6 libgconf-2-4 libnss3 libxss1 libappindicator1 libindicator7 fonts-liberation libasound2 libatk-bridge2.0-0 libgtk-3-0
+          
+          # Instalar Google Chrome
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt install -y ./google-chrome-stable_current_amd64.deb
+
+          # Instalar ChromeDriver compatível
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+' | head -1)
+          CHROMEDRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json" | jq -r --arg ver "$CHROME_VERSION" '.channels.Stable.downloads.chromedriver[] | select(.platform=="linux64") | .url')
+          wget -O chromedriver.zip "$CHROMEDRIVER_VERSION"
+          unzip chromedriver.zip
+          sudo mv chromedriver /usr/local/bin/
+          chromedriver --version
+
+      - name: Install Python Dependencies
         run: pip install -r requirements.txt
 
-      - name: Run Robot Tests
+      - name: Run Robot Tests (Headless)
         run: |
           mkdir -p results
-          robot -d results tests/
+          xvfb-run --auto-servernum --server-args='-screen 0 1920x1080x24' robot -d results tests/
 
-      - name: Upload Test Results
+      - name: Upload Robot Framework Reports
         uses: actions/upload-artifact@v3
         with:
           name: robot-results
